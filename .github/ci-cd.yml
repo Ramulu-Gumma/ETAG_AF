@@ -1,0 +1,67 @@
+name: ETAG_AF Selenium Tests CI/CD
+
+on:
+  push:
+    branches: [ main, master, develop ]
+  pull_request:
+    branches: [ main, master, develop ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        java-version: [11]
+        browser: [chrome]
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Java ${{ matrix.java-version }}
+      uses: actions/setup-java@v3
+      with:
+        java-version: ${{ matrix.java-version }}
+        distribution: 'temurin'
+        cache: 'maven'
+
+    - name: Cache Maven packages
+      uses: actions/cache@v3
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-maven-
+
+    - name: Install Chrome browser
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y google-chrome-stable
+        google-chrome --version
+
+    - name: Run Maven tests with ${{ matrix.browser }}
+      run: |
+        mvn test -Dbrowser=${{ matrix.browser }} -Dheadless=true
+      env:
+        BROWSER: ${{ matrix.browser }}
+
+    - name: Upload test reports
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-results-${{ matrix.browser }}
+        path: |
+          target/screenshots/
+          target/cucumber-reports/
+          test-output/
+        retention-days: 7
+
+    - name: Show test summary
+      if: always()
+      run: |
+        echo "=== TEST EXECUTION SUMMARY ==="
+        echo "Browser: ${{ matrix.browser }}"
+        echo "Java Version: ${{ matrix.java-version }}"
+        echo "Reports available in artifacts section"

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-09-09T12:50:09 IST" name="Default suite" finished-at="2025-09-09T12:50:35 IST" duration-ms="25559">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:TestNGRunner.TestRunner@3e08ff24]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2025-09-09T12:50:09 IST" name="Default test" finished-at="2025-09-09T12:50:35 IST" duration-ms="25559">
+      <class name="TestNGRunner.TestRunner">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:TestNGRunner.TestRunner@3e08ff24]" started-at="2025-09-09T12:50:09 IST" name="beforeSuite" finished-at="2025-09-09T12:50:09 IST" duration-ms="10" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:TestNGRunner.TestRunner@3e08ff24]" started-at="2025-09-09T12:50:09 IST" name="setUpClass" finished-at="2025-09-09T12:50:10 IST" duration-ms="601" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1c807b1d]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:TestNGRunner.TestRunner@3e08ff24]" started-at="2025-09-09T12:50:10 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-09-09T12:50:35 IST" duration-ms="24822" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["MDH Login Functionality"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["MDH-eTag PROD Smoke Suite"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:TestNGRunner.TestRunner@3e08ff24]" started-at="2025-09-09T12:50:35 IST" name="tearDownClass" finished-at="2025-09-09T12:50:35 IST" duration-ms="80" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:TestNGRunner.TestRunner@3e08ff24]" started-at="2025-09-09T12:50:35 IST" name="afterSuite" finished-at="2025-09-09T12:50:35 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- TestNGRunner.TestRunner -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
