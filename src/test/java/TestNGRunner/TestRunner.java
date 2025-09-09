@@ -13,7 +13,7 @@ import java.nio.file.Path;
 @CucumberOptions(
     features = "Features/MDHLogin.feature",
     glue = {"com.StepDefinations", "com.Hooks"},
-    monochrome = true,
+    monochrome = false,
     tags = "@smoke",
     plugin = {
         "pretty",
