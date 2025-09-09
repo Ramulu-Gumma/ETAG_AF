@@ -31,7 +31,7 @@ public class MDHLoginSteps {
 
 	@And("User clicks MDH login button")
 	public void user_clicks_mdh_login_button() throws InterruptedException {
-		Thread.sleep(7000);
+		Thread.sleep(8000);
 		loginPage.clickLogin();
 	}
 
